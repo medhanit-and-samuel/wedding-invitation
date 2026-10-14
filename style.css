@@ -38,7 +38,7 @@ body:not(.wedding-page) {
             rgba(8, 28, 58, 0.22),
             rgba(8, 28, 58, 0.38)
         ),
-        url("images/album/hero-bw.jpg");
+        url("images/album/porch.jpg");
 
     background-size: cover;
     background-position: center;
@@ -1176,6 +1176,11 @@ body.lang-am .wish-card-name {
     position: relative;
 
     overflow: hidden;
+}
+
+
+.wedding-hero .photo-bg {
+    object-position: center 22%;
 }
 
 
@@ -3391,6 +3396,10 @@ footer p {
         font-size: 68px;
     }
 
+    .wedding-hero .photo-bg {
+        object-position: center 22%;
+    }
+
     .timer {
 
         gap: 10px;
@@ -3466,13 +3475,9 @@ footer p {
         opacity: 0.35;
     }
 
-    /* Keep the same photo crop/shade as desktop */
-    .photo-bg {
+    /* Gate / other screens keep default crop */
+    .opening-gate .photo-bg {
         object-position: center center;
-    }
-
-    .photo-shade {
-        background: var(--photo-shade);
     }
 
     .floral-corner {
