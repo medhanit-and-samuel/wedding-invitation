@@ -105,10 +105,10 @@ const I18N = {
     },
     am: {
         "gate.welcome": "በአክብሮት ተጋብዘዋል",
-        "gate.date": " ህዳር 14፣ 2019",
+        "gate.date": " ህዳር 5፣ 2019",
         "gate.verse": "«አምላክ ሁሉንም ነገር በወቅቱ ውብ አድርጎ ሠርቶታል።»",
         "gate.verseRef": "መክብብ 3፡11",
-        "gate.letterDate": " ህዳር 14,2019",
+        "gate.letterDate": " ህዳር 5,2019",
         "gate.tap": "ፖስታውን በመንካት ግብዣችንን ይክፈቱ",
         "gate.openAria": "ግብዣውን ክፈት",
         "hero.gettingMarried": ",We are getting married",
