@@ -38,7 +38,7 @@ body:not(.wedding-page) {
             rgba(8, 28, 58, 0.22),
             rgba(8, 28, 58, 0.38)
         ),
-        url("images/jw.jpg");
+        url("images/album/hero-bw.jpg");
 
     background-size: cover;
     background-position: center;
