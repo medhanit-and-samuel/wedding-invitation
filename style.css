@@ -288,7 +288,7 @@ body:not(.wedding-page) {
 }
 
 
-.invite-card h1 span {
+.invite-card h1 .couple-amp {
 
     display: block;
 
@@ -1332,7 +1332,7 @@ body.lang-am .wish-card-name {
 }
 
 
-.hero-content h1 span {
+.hero-content h1 .couple-amp {
 
     display: block;
 
