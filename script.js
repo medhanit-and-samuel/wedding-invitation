@@ -112,7 +112,7 @@ const I18N = {
         "gate.tap": "ፖስታውን በመንካት ግብዣችንን ይክፈቱ",
         "gate.openAria": "ግብዣውን ክፈት",
         "hero.gettingMarried": ",We are getting married",
-        "hero.date": " ህዳር 14፣ 2019 · አዲስ አበባ",
+        "hero.date": " ህዳር 5፣ 2019 · አዲስ አበባ",
         "hero.scrollAria": "ወደ ዝርዝር ይሸብልሉ",
         "countdown.label": "ትልቁ ቀን",
         "countdown.title": "ቀን እየቆጠርን",
@@ -185,7 +185,7 @@ const I18N = {
         "thanks.label": "በምስጋና ልብ",
         "thanks.title": "እናመሰግናለን",
         "thanks.text": "የታሪካችን አካል ስለሆናችሁ እናመሰግናለን።",
-        "footer.date": "ህዳር 14፣ 2026",
+        "footer.date": "ህዳር 5፣ 2019",
         
         "music.pause": "ሙዚቃ አቁም",
         "music.play": "ሙዚቃ አጫውት",
