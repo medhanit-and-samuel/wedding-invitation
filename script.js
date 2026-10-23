@@ -210,6 +210,19 @@ function t(key) {
     return key;
 }
 
+function applyCoupleNames() {
+    document.querySelectorAll(".couple-name").forEach(function (el) {
+        const key = el.getAttribute("data-i18n");
+        if (key) {
+            el.textContent = t(key);
+        }
+    });
+
+    document.querySelectorAll(".couple-footer-name").forEach(function (el) {
+        el.textContent = t("names.footer");
+    });
+}
+
 function applyLanguage(lang) {
     currentLang = lang === "am" ? "am" : "en";
 
@@ -228,6 +241,8 @@ function applyLanguage(lang) {
             el.textContent = t(key);
         }
     });
+
+    applyCoupleNames();
 
     document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
         const key = el.getAttribute("data-i18n-html");
