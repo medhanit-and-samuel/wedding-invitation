@@ -13,6 +13,7 @@ let currentLang = "en";
 const I18N = {
     en: {
         "gate.welcome": "You are warmly invited to",
+        
         "gate.date": "November 14, 2026",
         "gate.verse": '"He has made everything beautiful in its time."',
         "gate.verseRef": "Ecclesiastes 3:11",
@@ -21,7 +22,7 @@ const I18N = {
         "gate.openAria": "Open invitation",
         "names.bride": "Medhanit Asahel",
         "names.groom": "Samuel Micheal",
-        "names.footer": "Medhanit & Samuel ",
+        "names.footer": "Medhanit Asahel & Samuel Micheal",
         "hero.gettingMarried": "We are getting married",
         "hero.date": "November 14, 2026 · Addis Ababa",
         "hero.scrollAria": "Scroll to details",
@@ -48,7 +49,7 @@ const I18N = {
         "details.ceremony": "Wedding Ceremony",
         "details.ceremonyPlace": "Addis Amba<br>JW Kingdom Hall",
         "details.zoom": "Zoom Meeting",
-        "details.zoomInfo": "Zoom ID: 990 863 5436<br>Passcode: 303030",
+        "details.zoomInfo": "Zoom ID: 820 4808 6748<br>Passcode: No password",
         "gallery.label": "Our moments",
         "gallery.title": "Memories of Us",
         "gallery.note":
@@ -143,7 +144,7 @@ const I18N = {
         "details.ceremony": "የሰርግ ሥነ ሥርዓት",
         "details.ceremonyPlace": "አዲስ አምባ<br>የይሖዋ ምሥክሮች የመሰብሰቢያ አዳራሽ",
         "details.zoom": "የዙም ስብሰባ",
-        "details.zoomInfo": "የዙም መታወቂያ፡ 990 863 5436<br>የይለፍ ቃል፡ 303030",
+        "details.zoomInfo": "የዙም መታወቂያ፡ 820 4808 6748 <br>የይለፍ ቃል፡ የለም",
         "gallery.label": "ጊዜያቶቻችን",
         "gallery.title": "ትውስታዎቻችን",
         "gallery.note": " የተወሰኑ ውድ ፎቶዎቻችን ",
