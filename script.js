@@ -109,8 +109,8 @@
            "lang.group": "Language"
        },
        am: {
-           "gate.welcome": "በአክብሮት ተጋብዘዋል",
-           "gate.wedding": "ወደ ሠርጋቸው",
+           "gate.welcome": "በአክብሮት ተጋብዘዋል ለ ",
+           "gate.wedding": "ሠርግ",
            "gate.date": " ህዳር 5፣ 2019",
            "gate.verse": "«አምላክ ሁሉንም ነገር በወቅቱ ውብ አድርጎ ሠርቶታል።»",
            "gate.verseRef": "መክብብ 3፡11",
