@@ -392,7 +392,7 @@
       COUNTDOWN
       ===================================================== */
    
-   const weddingDate = new Date("NOV 14, 2026 09:00:00").getTime();
+   const weddingDate = new Date("2026-11-14T16:00:00+03:00").getTime();
    
    function updateCountdown() {
    
@@ -1131,7 +1131,7 @@
       ===================================================== */
    
    function buildWeddingIcs() {
-       // 09:00–15:00 Addis Ababa (UTC+3) on Nov 14, 2026
+       // 04:00 PM – 07:00 PM Addis Ababa (UTC+3) on Nov 14, 2026
        return [
            "BEGIN:VCALENDAR",
            "VERSION:2.0",
@@ -1141,10 +1141,10 @@
            "BEGIN:VEVENT",
            "UID:medhanit-samuel-wedding-20261114@weddinv",
            "DTSTAMP:20260820T090000Z",
-           "DTSTART:20261114T060000Z",
-           "DTEND:20261114T120000Z",
+           "DTSTART:20261114T130000Z",
+           "DTEND:20261114T160000Z",
            "SUMMARY:Medhanit & Samuel Wedding",
-           "DESCRIPTION:Ceremony 09:00 AM at Addis Amba JW Kingdom Hall. Celebration 12:00 PM. Zoom ID: 990 863 5436 Passcode: 303030",
+           "DESCRIPTION:Ceremony 04:00 PM at Addis Amba JW Kingdom Hall. Zoom ID: 820 4808 6748 (no passcode)",
            "LOCATION:Addis Amba JW Kingdom Hall\\, XQ68+MCP\\, Addis Ababa\\, Ethiopia",
            "STATUS:CONFIRMED",
            "SEQUENCE:0",
