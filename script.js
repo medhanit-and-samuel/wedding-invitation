@@ -34,6 +34,7 @@
            "countdown.minutes": "Minutes",
            "countdown.seconds": "Seconds",
            "countdown.calendar": "Add to Calendar",
+           "countdown.done": "We are married! Thank you for celebrating with us.",
            "story.label": "Our story",
            "story.title": "Two Hearts, One Story",
            "story.p1":
@@ -51,6 +52,7 @@
            "details.ceremonyPlace": "Addis Amba<br>JW Kingdom Hall",
            "details.zoom": "Zoom Meeting",
            "details.zoomInfo": "Zoom ID: 820 4808 6748<br>Passcode: No password",
+           "details.time": "04:00 PM · EAT (UTC+3)<br>10:00 Ethiopian time",
            "gallery.label": "Our moments",
            "gallery.title": "Memories of Us",
            "gallery.note":
@@ -109,8 +111,8 @@
            "lang.group": "Language"
        },
        am: {
-           "gate.welcome": "በአክብሮት ተጋብዘዋል",
-           "gate.wedding": "ወደ ሠርጋቸው",
+           "gate.welcome": "በአክብሮት ተጋብዘዋል ለ",
+           "gate.wedding": "ሠርግ",
            "gate.date": " ህዳር 5፣ 2019",
            "gate.verse": "«አምላክ ሁሉንም ነገር በወቅቱ ውብ አድርጎ ሠርቶታል።»",
            "gate.verseRef": "መክብብ 3፡11",
@@ -130,6 +132,7 @@
            "countdown.minutes": "ደቂቃዎች",
            "countdown.seconds": "ሰከንዶች",
            "countdown.calendar": "ወደ ቀን መቁጠሪያ ጨምር",
+           "countdown.done": "ተጋብተናል! በደስታችን ስለተካፈላችሁ እናመሰግናለን።",
            "story.label": "ታሪካችን",
            "story.title": "ሁለት ልቦች፣ አንድ ታሪክ",
            "story.p1":
@@ -147,6 +150,7 @@
            "details.ceremonyPlace": "አዲስ አምባ<br>የይሖዋ ምሥክሮች የመሰብሰቢያ አዳራሽ",
            "details.zoom": "የዙም ስብሰባ",
            "details.zoomInfo": "የዙም መታወቂያ፡ 820 4808 6748 <br>የይለፍ ቃል፡ የለም",
+           "details.time": "ከቀኑ 10:00 ሰዓት<br>(04:00 PM · EAT)",
            "gallery.label": "ጊዜያቶቻችን",
            "gallery.title": "ትውስታዎቻችን",
            "gallery.note": " የተወሰኑ ውድ ፎቶዎቻችን ",
@@ -406,6 +410,18 @@
    
        if (!days || !hours || !minutes || !seconds) {
            return;
+       }
+   
+       // After the ceremony starts: hide the timer, show a thank-you message
+       const timerBox = document.querySelector(".timer");
+       const doneNote = document.getElementById("countdownDone");
+   
+       if (timerBox) {
+           timerBox.style.display = difference <= 0 ? "none" : "";
+       }
+   
+       if (doneNote) {
+           doneNote.hidden = difference > 0;
        }
    
        if (difference <= 0) {
@@ -752,6 +768,7 @@
    const GUEST_COUNT_KEY = "weddingWishCount";
    
    let wishesDb = null;
+   let currentUid = null;
    let lastWishDocs = [];
    
    function isFirebaseConfigured() {
@@ -840,6 +857,52 @@
        card.className = "wish-card";
        card.dataset.id = wish.id || "";
    
+       const mine = !!(wish.uid && currentUid && wish.uid === currentUid);
+   
+       const actionsHtml = mine
+           ? '<div class="wish-card-actions">' +
+             '<button type="button" class="wish-edit-btn">' +
+             t("wishes.edit") +
+             "</button>" +
+             '<button type="button" class="wish-delete-btn">' +
+             t("wishes.delete") +
+             "</button>" +
+             "</div>"
+           : "";
+   
+       const editHtml = mine
+           ? '<form class="wish-card-edit" hidden>' +
+             '<label class="wish-label" for="edit-name-' +
+             escapeHtml(wish.id) +
+             '">' +
+             t("wishes.nameLabel") +
+             "</label>" +
+             '<input class="wish-input" id="edit-name-' +
+             escapeHtml(wish.id) +
+             '" type="text" maxlength="80" required value="' +
+             escapeHtml(wish.name) +
+             '">' +
+             '<label class="wish-label" for="edit-msg-' +
+             escapeHtml(wish.id) +
+             '">' +
+             t("wishes.messageLabel") +
+             "</label>" +
+             '<textarea class="wish-textarea" id="edit-msg-' +
+             escapeHtml(wish.id) +
+             '" rows="3" maxlength="500" required>' +
+             escapeHtml(wish.message) +
+             "</textarea>" +
+             '<div class="wish-card-actions">' +
+             '<button type="submit" class="wish-save-btn">' +
+             t("wishes.save") +
+             "</button>" +
+             '<button type="button" class="wish-cancel-btn">' +
+             t("wishes.cancel") +
+             "</button>" +
+             "</div>" +
+             "</form>"
+           : "";
+   
        card.innerHTML =
            '<div class="wish-card-view">' +
            '<p class="wish-card-message">“' + escapeHtml(wish.message) + '”</p>' +
@@ -851,7 +914,9 @@
                  "</span>"
                : "") +
            "</p>" +
-           "</div>";
+           actionsHtml +
+           "</div>" +
+           editHtml;
    
        const view = card.querySelector(".wish-card-view");
        const editForm = card.querySelector(".wish-card-edit");
@@ -943,9 +1008,40 @@
            .collection("wishes")
            .doc(id)
            .delete()
+           .then(function () {
+               releaseGuestWish();
+           })
            .catch(function () {
                window.alert(t("wishes.deleteError"));
            });
+   }
+   
+   function releaseGuestWish() {
+       setGuestWishCount(Math.max(0, getGuestWishCount() - 1));
+   
+       const form = document.getElementById("wishForm");
+       const status = document.getElementById("wishStatus");
+       const submit = document.getElementById("wishSubmit");
+   
+       if (!form) {
+           return;
+       }
+   
+       form.querySelectorAll("input, textarea, button").forEach(function (el) {
+           if (el.id !== "wishHoney") {
+               el.disabled = false;
+           }
+       });
+   
+       if (status) {
+           status.hidden = true;
+           status.className = "wish-status";
+           status.textContent = "";
+       }
+   
+       if (submit) {
+           submit.textContent = t("wishes.send");
+       }
    }
    
    function paintWishesWall(wall, empty) {
@@ -1000,6 +1096,17 @@
        }
        wishesDb = firebase.firestore();
    
+       // Anonymous sign-in: lets each guest edit/delete ONLY their own wish
+       if (typeof firebase.auth === "function") {
+           firebase.auth().onAuthStateChanged(function (user) {
+               currentUid = user ? user.uid : null;
+               paintWishesWall(wall, empty);
+           });
+           firebase.auth().signInAnonymously().catch(function () {
+               // reading wishes still works; sending will show an error
+           });
+       }
+   
        updateGuestFormAvailability(status, form, submit);
    
        wishesDb
@@ -1015,6 +1122,7 @@
                            id: doc.id,
                            name: data.name || "Guest",
                            message: data.message || "",
+                           uid: data.uid || "",
                            createdAt: data.createdAt
                        });
                    });
@@ -1055,6 +1163,13 @@
                return;
            }
    
+           if (!currentUid) {
+               status.hidden = false;
+               status.className = "wish-status is-error";
+               status.textContent = t("wishes.sendError");
+               return;
+           }
+   
            submit.disabled = true;
            status.hidden = false;
            status.className = "wish-status";
@@ -1066,6 +1181,7 @@
                    name: name,
                    message: message,
                    guestId: getGuestId(),
+                   uid: currentUid,
                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
                })
                .then(function () {
