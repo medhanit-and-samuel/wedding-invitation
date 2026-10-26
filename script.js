@@ -109,8 +109,8 @@
            "lang.group": "Language"
        },
        am: {
-           "gate.welcome": "በአክብሮት ተጋብዘዋል ለ ",
-           "gate.wedding": "ሠርግ",
+           "gate.welcome": "በአክብሮት ተጋብዘዋል",
+           "gate.wedding": "ወደ ሠርጋቸው",
            "gate.date": " ህዳር 5፣ 2019",
            "gate.verse": "«አምላክ ሁሉንም ነገር በወቅቱ ውብ አድርጎ ሠርቶታል።»",
            "gate.verseRef": "መክብብ 3፡11",
@@ -851,45 +851,7 @@
                  "</span>"
                : "") +
            "</p>" +
-           '<div class="wish-card-actions">' +
-           '<button type="button" class="wish-edit-btn">' +
-           t("wishes.edit") +
-           "</button>" +
-           '<button type="button" class="wish-delete-btn">' +
-           t("wishes.delete") +
-           "</button>" +
-           "</div>" +
-           "</div>" +
-           '<form class="wish-card-edit" hidden>' +
-           '<label class="wish-label" for="edit-name-' +
-           escapeHtml(wish.id) +
-           '">' +
-           t("wishes.nameLabel") +
-           "</label>" +
-           '<input class="wish-input" id="edit-name-' +
-           escapeHtml(wish.id) +
-           '" type="text" maxlength="80" required value="' +
-           escapeHtml(wish.name) +
-           '">' +
-           '<label class="wish-label" for="edit-msg-' +
-           escapeHtml(wish.id) +
-           '">' +
-           t("wishes.messageLabel") +
-           "</label>" +
-           '<textarea class="wish-textarea" id="edit-msg-' +
-           escapeHtml(wish.id) +
-           '" rows="3" maxlength="500" required>' +
-           escapeHtml(wish.message) +
-           "</textarea>" +
-           '<div class="wish-card-actions">' +
-           '<button type="submit" class="wish-save-btn">' +
-           t("wishes.save") +
-           "</button>" +
-           '<button type="button" class="wish-cancel-btn">' +
-           t("wishes.cancel") +
-           "</button>" +
-           "</div>" +
-           "</form>";
+           "</div>";
    
        const view = card.querySelector(".wish-card-view");
        const editForm = card.querySelector(".wish-card-edit");
