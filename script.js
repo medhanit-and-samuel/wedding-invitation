@@ -52,7 +52,7 @@
            "details.ceremonyPlace": "Addis Amba<br>JW Kingdom Hall",
            "details.zoom": "Zoom Meeting",
            "details.zoomInfo": "Zoom ID: 820 4808 6748<br>Passcode: No password",
-           "details.time": "04:00 PM · EAT (UTC+3)<br>10:00 Ethiopian time",
+           "details.time": "04:00 PM <br>10:00 Ethiopian time",
            "gallery.label": "Our moments",
            "gallery.title": "Memories of Us",
            "gallery.note":
