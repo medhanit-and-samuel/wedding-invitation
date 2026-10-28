@@ -4,8 +4,10 @@ service cloud.firestore {
     match /wishes/{wishId} {
       allow read: if true;
 
-      allow create: if
-        request.resource.data.keys().hasOnly(['name', 'message', 'createdAt', 'guestId'])
+      // Anyone signed in (anonymously) can add ONE new wish document, tagged with their own uid
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['name', 'message', 'createdAt', 'guestId', 'uid'])
+        && request.resource.data.uid == request.auth.uid
         && request.resource.data.name is string
         && request.resource.data.message is string
         && request.resource.data.guestId is string
@@ -17,7 +19,20 @@ service cloud.firestore {
         && request.resource.data.guestId.size() <= 80
         && request.resource.data.createdAt == request.time;
 
-      allow update, delete: if true;
+      // Only the guest who wrote a wish can change its name/message (nothing else)
+      allow update: if request.auth != null
+        && resource.data.uid == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'message'])
+        && request.resource.data.name is string
+        && request.resource.data.message is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 80
+        && request.resource.data.message.size() > 0
+        && request.resource.data.message.size() <= 500;
+
+      // Only the guest who wrote a wish can delete it
+      allow delete: if request.auth != null
+        && resource.data.uid == request.auth.uid;
     }
   }
 }
