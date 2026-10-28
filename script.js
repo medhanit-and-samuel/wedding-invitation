@@ -148,7 +148,7 @@
            "details.title": "ስለ ሰርጋችን",
            "details.ceremony": "የሰርግ ሥነ ሥርዓት",
            "details.ceremonyPlace": "አዲስ አምባ<br>የይሖዋ ምሥክሮች የመሰብሰቢያ አዳራሽ",
-           "details.time": "ከቀኑ 10:00 ሰዓት",
+           
            "details.zoom": "የዙም ስብሰባ",
            "details.zoomInfo": "የዙም መታወቂያ፡ 820 4808 6748 <br>የይለፍ ቃል፡ የለም",
            "details.time": "ከቀኑ 10:00 ሰዓት",
