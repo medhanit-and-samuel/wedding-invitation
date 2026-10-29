@@ -29,6 +29,8 @@
            "hero.scrollAria": "Scroll to details",
            "countdown.label": "The big day",
            "countdown.title": "Counting Down to Forever",
+           "countdown.labelAfter": "Our new chapter",
+           "countdown.titleAfter": "Married for",
            "countdown.days": "Days",
            "countdown.hours": "Hours",
            "countdown.minutes": "Minutes",
@@ -52,7 +54,7 @@
            "details.ceremonyPlace": "Addis Amba<br>JW Kingdom Hall",
            "details.zoom": "Zoom Meeting",
            "details.zoomInfo": "Zoom ID: 820 4808 6748<br>Passcode: No password",
-           "details.time": "04:00 PM <br>10:00 Ethiopian time",
+           "details.time": "04:00 PM · EAT (UTC+3)<br>10:00 Ethiopian time",
            "gallery.label": "Our moments",
            "gallery.title": "Memories of Us",
            "gallery.note":
@@ -99,8 +101,9 @@
            "photo.label": "Capture the love",
            "photo.title": "Share a Photo",
            "photo.text":
-               "Have a sweet photo for us? Send it on WhatsApp — we’d love to keep it.",
+               "Have a sweet photo for us? Send it on WhatsApp or Telegram — we’d love to see it!",
            "photo.button": "Share Photo on WhatsApp",
+           "photo.buttonTelegram": "Share Photo on Telegram",
            "thanks.label": "With grateful hearts",
            "thanks.title": "Thank You",
            "thanks.text": "Thank you for being part of our story.",
@@ -111,8 +114,8 @@
            "lang.group": "Language"
        },
        am: {
-           "gate.welcome": "በአክብሮት ተጋብዘዋል ለ",
-           "gate.wedding": "ሠርግ",
+           "gate.welcome": "በአክብሮት ተጋብዘዋል",
+           "gate.wedding": "ወደ ሠርጋቸው",
            "gate.date": " ህዳር 5፣ 2019",
            "gate.verse": "«አምላክ ሁሉንም ነገር በወቅቱ ውብ አድርጎ ሠርቶታል።»",
            "gate.verseRef": "መክብብ 3፡11",
@@ -120,18 +123,20 @@
            "gate.tap": "ፖስታውን በመንካት ግብዣችንን ይክፈቱ",
            "gate.openAria": "ግብዣውን ክፈት",
            "names.bride": "መድሃኒት አሳሄል ",
-           "names.groom": "ሣሙኤል ሚካኤል ",
-           "names.footer": "መድሃኒት አሳሄል  & ሣሙኤል ሚካኤል",
-           "hero.gettingMarried": ",We are getting married",
+           "names.groom": "ሳሙኤል ሚካኤል ",
+           "names.footer": "መድሃኒት አሳሄል  & ሳሙኤል ሚካኤል",
+           "hero.gettingMarried": "ልንጋባ ነው",
            "hero.date": " ህዳር 5፣ 2019 · አዲስ አበባ",
            "hero.scrollAria": "ወደ ዝርዝር ይሸብልሉ",
            "countdown.label": "ትልቁ ቀን",
-           "countdown.title": "ቀን እየቆጠርን",
+           "countdown.title": "ለሰርጋችን የቀረው ጊዜ",
+           "countdown.labelAfter": "አዲሱ ምዕራፋችን",
+           "countdown.titleAfter": "ከተጋባን",
            "countdown.days": "ቀናት",
            "countdown.hours": "ሰዓታት",
            "countdown.minutes": "ደቂቃዎች",
            "countdown.seconds": "ሰከንዶች",
-           "countdown.calendar": "ወደ ቀን መቁጠሪያ ጨምር",
+           "countdown.calendar": "ቀን መቁጠሪያ ላይ መዝግብ",
            "countdown.done": "ተጋብተናል! በደስታችን ስለተካፈላችሁ እናመሰግናለን።",
            "story.label": "ታሪካችን",
            "story.title": "ሁለት ልቦች፣ አንድ ታሪክ",
@@ -148,12 +153,11 @@
            "details.title": "ስለ ሰርጋችን",
            "details.ceremony": "የሰርግ ሥነ ሥርዓት",
            "details.ceremonyPlace": "አዲስ አምባ<br>የይሖዋ ምሥክሮች የመሰብሰቢያ አዳራሽ",
-           
            "details.zoom": "የዙም ስብሰባ",
            "details.zoomInfo": "የዙም መታወቂያ፡ 820 4808 6748 <br>የይለፍ ቃል፡ የለም",
            "details.time": "ከቀኑ 10:00 ሰዓት",
-           "gallery.label": "ጊዜያቶቻችን",
-           "gallery.title": "ትውስታዎቻችን",
+           "gallery.label": "ያሳለፍናቸው ትውስታዎች",
+           "gallery.title": "ትዝታዎቻችን",
            "gallery.note": " የተወሰኑ ውድ ፎቶዎቻችን ",
            "gallery.trackAria": "የፎቶ ማእከል",
            "gallery.prev": "ቀዳሚ ፎቶ",
@@ -163,10 +167,10 @@
            "location.title": "የሰርግ ቦታ",
            "location.address": "XQ68+MCP፣ አዲስ አበባ<br>ኢትዮጵያ",
            "location.directions": "አቅጣጫ ያግኙ",
-           "wishes.label": "ከልባችሁ",
-           "wishes.title": "የእንግዶች ምኞት",
+           "wishes.label": "የልባችሁን ንገሩን",
+           "wishes.title": "የእንግዶቻችን ምኞት",
            "wishes.intro":
-               "ለመድሃኒት እና ሣሙኤል አጭር ምኞት ያጋሩ — ቃላቶቻችሁ እዚህ ለሁሉም ይታያሉ።",
+               "ለመድሃኒት እና ሳሙኤል አጭር ምኞት ያጋሩ — የጻፋችኋቸው ሃሳቦች እዚሁ ላይ ለሁሉም ይታያሉ።",
            "wishes.empty": "የመጀመሪያው ምኞት እርስዎ ይሁኑ።",
            "wishes.limit": "አንድ ምኞት ማጋራት ይችላሉ።",
            "wishes.nameLabel": "ስምዎ",
@@ -191,12 +195,13 @@
            "wishes.editError": "ምኞቱን ማርትዕ አልተቻለም።",
            "wishes.deleteError": "ምኞቱን መሰረዝ አልተቻለም።",
            "wishes.emptyFields": "ስም እና ምኞት ባዶ መሆን አይችሉም።",
-           "photo.label": "ፍቅሩን ያስቀምጡ",
-           "photo.title": "ፎቶ ያጋሩ",
+           "photo.label": "ያነሳችሁት የሚያምር ፎቶ አለ?",
+           "photo.title": "ፎቶውን ያጋሩን",
            "photo.text":
-               "ውብ ፎቶ አለዎት? በዋትስአፕ ይላኩልን — ለማቆየት እንወዳለን።",
+               "ውብ ፎቶ አለዎት? በዋትስአፕ ወይም በቴሌግራም ይላኩልን — ብናየው ደስ ይለናል!",
            "photo.button": "በዋትስአፕ ፎቶ ያጋሩ",
-           "thanks.label": "በምስጋና ልብ",
+           "photo.buttonTelegram": "በቴሌግራም ፎቶ ያጋሩ",
+           "thanks.label": "ከልብ",
            "thanks.title": "እናመሰግናለን",
            "thanks.text": "የታሪካችን አካል ስለሆናችሁ እናመሰግናለን።",
            "footer.date": "ህዳር 5፣ 2019",
@@ -413,44 +418,43 @@
            return;
        }
    
-       // After the ceremony starts: hide the timer, show a thank-you message
-       const timerBox = document.querySelector(".timer");
-       const doneNote = document.getElementById("countdownDone");
+       // Before the wedding: count DOWN. After it: count UP ("married for ...")
+       const isAfter = difference <= 0;
+       const elapsed = isAfter ? Math.abs(difference) : difference;
    
-       if (timerBox) {
-           timerBox.style.display = difference <= 0 ? "none" : "";
+       const labelEl = document.querySelector("#countdown .section-label");
+       const titleEl = document.querySelector("#countdown h2");
+       const calendarBox = document.querySelector(".calendar-actions");
+   
+       if (document.body.dataset.countdownAfter !== String(isAfter)) {
+   
+           document.body.dataset.countdownAfter = String(isAfter);
+   
+           if (labelEl) {
+               labelEl.setAttribute(
+                   "data-i18n",
+                   isAfter ? "countdown.labelAfter" : "countdown.label"
+               );
+               labelEl.textContent = t(isAfter ? "countdown.labelAfter" : "countdown.label");
+           }
+   
+           if (titleEl) {
+               titleEl.setAttribute(
+                   "data-i18n",
+                   isAfter ? "countdown.titleAfter" : "countdown.title"
+               );
+               titleEl.textContent = t(isAfter ? "countdown.titleAfter" : "countdown.title");
+           }
+   
+           if (calendarBox) {
+               calendarBox.style.display = isAfter ? "none" : "";
+           }
        }
    
-       if (doneNote) {
-           doneNote.hidden = difference > 0;
-       }
-   
-       if (difference <= 0) {
-           days.textContent = "0";
-           hours.textContent = "00";
-           minutes.textContent = "00";
-           seconds.textContent = "00";
-           return;
-       }
-   
-       const daysValue = Math.floor(
-           difference / (1000 * 60 * 60 * 24)
-       );
-   
-       const hoursValue = Math.floor(
-           (difference % (1000 * 60 * 60 * 24))
-           / (1000 * 60 * 60)
-       );
-   
-       const minutesValue = Math.floor(
-           (difference % (1000 * 60 * 60))
-           / (1000 * 60)
-       );
-   
-       const secondsValue = Math.floor(
-           (difference % (1000 * 60))
-           / 1000
-       );
+       const daysValue = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+       const hoursValue = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+       const minutesValue = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+       const secondsValue = Math.floor((elapsed % (1000 * 60)) / 1000);
    
        days.textContent = daysValue;
        hours.textContent = String(hoursValue).padStart(2, "0");
@@ -1223,7 +1227,7 @@
            "DTSTART:20261114T130000Z",
            "DTEND:20261114T160000Z",
            "SUMMARY:Medhanit & Samuel Wedding",
-           "DESCRIPTION:Ceremony 04:00 PM at Addis Amba JW Kingdom Hall. Zoom ID: 820 4808 6748 (no passcode)",
+           "DESCRIPTION:Ceremony 04:00 PM at Addis Amba JW Kingdom Hall. Zoom ID: 820 4808 6748 (no passcode). Map: https://maps.app.goo.gl/Ru5KdPxhMUhWT2Xu8",
            "LOCATION:Addis Amba JW Kingdom Hall\\, XQ68+MCP\\, Addis Ababa\\, Ethiopia",
            "STATUS:CONFIRMED",
            "SEQUENCE:0",
