@@ -3549,3 +3549,39 @@ footer p {
         height: 40px;
     }
 }
+
+/* =====================================================
+   DESKTOP / WIDE SCREENS — keep the couple visible
+   ===================================================== */
+
+@media (min-width: 900px) and (min-aspect-ratio: 5/4) {
+
+    /* Hero: names at the top, couple stays in view below them */
+
+    .wedding-hero {
+
+        align-items: flex-start;
+
+        padding-top: 5vh;
+    }
+
+    .wedding-hero .photo-bg {
+
+        object-position: center 32%;
+    }
+
+    .wedding-hero .hero-content {
+
+        padding-top: 10px;
+    }
+
+    .hero-content h1 {
+
+        font-size: clamp(54px, 6.4vw, 90px);
+    }
+
+    .hero-date {
+
+        margin-top: 14px;
+    }
+}
