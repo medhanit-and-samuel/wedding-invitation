@@ -51,9 +51,9 @@
            "details.label": "Join us",
            "details.title": "Wedding Details",
            "details.ceremony": "Wedding Ceremony",
-           "details.ceremonyPlace": "Addis Amba<br>Jehovah's Witnesses Kingdom Hall",
+           "details.ceremonyPlace": "Addis Amba<br>JW Kingdom Hall",
            "details.zoom": "Zoom Meeting",
-           "details.zoomInfo": "Zoom ID: 820 4808 6748<br>",
+           "details.zoomInfo": "Zoom ID: 820 4808 6748<br>Passcode: No password",
            "details.time": "04:00 PM · EAT (UTC+3)<br>10:00 Ethiopian time",
            "gallery.label": "Our moments",
            "gallery.title": "Memories of Us",
@@ -154,24 +154,24 @@
            "details.ceremony": "የሰርግ ሥነ ሥርዓት",
            "details.ceremonyPlace": "አዲስ አምባ<br>የይሖዋ ምሥክሮች የመሰብሰቢያ አዳራሽ",
            "details.zoom": "የዙም ስብሰባ",
-           "details.zoomInfo": "የዙም መታወቂያ፡ 820 4808 6748",
+           "details.zoomInfo": "የዙም መታወቂያ፡ 820 4808 6748 <br>የይለፍ ቃል፡ የለም",
            "details.time": "ከቀኑ 10:00 ሰዓት",
            "gallery.label": "ያሳለፍናቸው ትውስታዎች",
            "gallery.title": "ትዝታዎቻችን",
-           "gallery.note": " የተወሰኑ ውብ ፎቶዎቻችን ",
+           "gallery.note": " የተወሰኑ ውድ ፎቶዎቻችን ",
            "gallery.trackAria": "የፎቶ ማእከል",
            "gallery.prev": "ቀዳሚ ፎቶ",
            "gallery.next": "ቀጣይ ፎቶ",
            "gallery.goto": "ወደ ፎቶ {n} ሂድ",
            "location.label": "ያግኙን",
            "location.title": "የሰርግ ቦታ",
-           "location.address": "XQ68+MCP፣ ሳሪስ አዲስ አበባ<br>ኢትዮጵያ",
+           "location.address": "XQ68+MCP፣ አዲስ አበባ<br>ኢትዮጵያ",
            "location.directions": "አቅጣጫ ያግኙ",
            "wishes.label": "የልባችሁን ንገሩን",
            "wishes.title": "የእንግዶቻችን ምኞት",
            "wishes.intro":
                "ለመድሃኒት እና ሳሙኤል አጭር ምኞት ያጋሩ — የጻፋችኋቸው ሃሳቦች እዚሁ ላይ ለሁሉም ይታያሉ።",
-           "wishes.empty": "የመጀመሪያው ምኞት የእርስዎ ይሁን።",
+           "wishes.empty": "የመጀመሪያው ምኞት እርስዎ ይሁኑ።",
            "wishes.limit": "አንድ ምኞት ማጋራት ይችላሉ።",
            "wishes.nameLabel": "ስምዎ",
            "wishes.messageLabel": "ምኞትዎ",
@@ -1107,8 +1107,9 @@
                currentUid = user ? user.uid : null;
                paintWishesWall(wall, empty);
            });
-           firebase.auth().signInAnonymously().catch(function () {
+           firebase.auth().signInAnonymously().catch(function (err) {
                // reading wishes still works; sending will show an error
+               console.error("WISH-DEBUG sign-in failed:", err && err.code, err && err.message);
            });
        }
    
@@ -1169,6 +1170,7 @@
            }
    
            if (!currentUid) {
+               console.error("WISH-DEBUG no signed-in user (anonymous sign-in is probably not enabled)");
                status.hidden = false;
                status.className = "wish-status is-error";
                status.textContent = t("wishes.sendError");
@@ -1197,7 +1199,8 @@
                    form.reset();
                    updateGuestFormAvailability(status, form, submit);
                })
-               .catch(function () {
+               .catch(function (err) {
+                   console.error("WISH-DEBUG save failed:", err && err.code, err && err.message);
                    status.className = "wish-status is-error";
                    status.textContent = t("wishes.sendError");
                })
@@ -1227,7 +1230,7 @@
            "DTSTART:20261114T130000Z",
            "DTEND:20261114T160000Z",
            "SUMMARY:Medhanit & Samuel Wedding",
-           "DESCRIPTION:Ceremony 04:00 PM at Addis Amba JW Kingdom Hall. Zoom ID: 820 4808 6748 (no passcode). Map: https://maps.app.goo.gl/Ru5KdPxhMUhWT2Xu8",
+           "DESCRIPTION:Ceremony 04:00 PM at Addis Amba JW Kingdom Hall. Zoom ID: 820 4808 6748 (no passcode). Map: https://maps.app.goo.gl/TL45tnppuVEV52W8A",
            "LOCATION:Addis Amba JW Kingdom Hall\\, XQ68+MCP\\, Addis Ababa\\, Ethiopia",
            "STATUS:CONFIRMED",
            "SEQUENCE:0",
