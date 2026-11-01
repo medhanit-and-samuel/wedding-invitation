@@ -1118,7 +1118,7 @@
        wishesDb
            .collection("wishes")
            .orderBy("createdAt", "desc")
-           .limit(80)
+           .limit(300)
            .onSnapshot(
                function (snapshot) {
                    lastWishDocs = [];
